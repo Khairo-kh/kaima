@@ -23,7 +23,7 @@
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 					<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 						<div class="w-10 rounded-full">
-							<img src="https://placeimg.com/80/80/people" alt="avatar" />
+							<img src={`https://placehold.co/800?text=${data.user.name}&font=lato`} alt="avatar" />
 						</div>
 					</label>
 
