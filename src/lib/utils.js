@@ -1,4 +1,10 @@
-import { randomBytes } from 'crypto';
+// workaround for using crypto in the browser
+let rb = null;
+
+(async () => {
+	const { randomBytes } = await import('node:crypto');
+	rb = randomBytes;
+})();
 
 /**
  *
@@ -15,6 +21,10 @@ export const serializeObj = (obj) => {
  * @returns
  */
 export const generateUsername = (name) => {
-	const id = randomBytes(2).toString('hex');
+	const id = rb(2).toString('hex');
 	return `${name.slice(0, 5)}${id}`;
+};
+
+export const getImageURL = (collectionId, recordId, fileName, size = '0x0') => {
+	return `http://localhost:8090/api/files/${collectionId}/${recordId}/${fileName}?thumb=${size}`;
 };
