@@ -7,7 +7,7 @@
 	<p class="text-center mt-1">
 		Don't have an account? <a
 			href="/register"
-			class="text-primary font-medium hover:cursor-pointer hover:underline">sign up</a
+			class="text-primary font-medium hover:cursor-pointer hover:underline">Sign Up</a
 		>
 	</p>
 	<form action="?/login" method="POST" class="flex flex-col items-center space-y-2 w-full pt-4">
