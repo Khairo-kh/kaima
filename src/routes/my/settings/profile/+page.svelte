@@ -61,7 +61,7 @@
 					<img
 						src={data.user?.avatar
 							? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
-							: `https://ui-avatars.com/api/?name=${data.user?.name}`}
+							: `https://placehold.co/800?text=${data.user.name}&font=lato`}
 						alt="user avatar"
 						id="avatar-preview"
 					/>
