@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"pocketbase": "^0.20.1"
+		"pocketbase": "^0.20.1",
+		"svelte-hero-icons": "^5.0.0"
 	}
 }
