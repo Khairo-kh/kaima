@@ -1,4 +1,5 @@
 <script>
+	import { getImageURL } from '$lib/utils';
 	import '../app.css';
 	export let data;
 </script>
@@ -24,7 +25,9 @@
 					<label tabindex="0" class="btn btn-ghost btn-circle avatar">
 						<div class="w-10 rounded-full">
 							<img
-								src={`https://placehold.co/800?text=${data.user.name}&font=lato`}
+								src={data.user?.avatar
+									? getImageURL(data.user?.collectionId, data.user?.id, data.user?.avatar)
+									: `https://placehold.co/800?text=${data.user.name}&font=lato`}
 								alt="User avatar"
 							/>
 						</div>
