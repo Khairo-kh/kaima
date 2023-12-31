@@ -19,6 +19,6 @@ export const actions = {
 			throw error(500, 'An error occurred!');
 		}
 
-		throw redirect(303, '/');
+		throw redirect(303, '/my/lists');
 	}
 };

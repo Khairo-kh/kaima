@@ -17,7 +17,7 @@
 				</div>
 			{:else}
 				<div class="dropdown dropdown-end mr-4">
-					<a href="/projects/new" class="btn btn-primary btn-outline">Add Project</a>
+					<a href="/lists/new" class="btn btn-secondary btn-outline">Add List</a>
 				</div>
 				<div class="dropdown dropdown-end">
 					<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -38,7 +38,7 @@
 						class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 					>
 						<li>
-							<a href="/my/projects" class="justify-between">My Projects</a>
+							<a href="/my/lists" class="justify-between">My Lists</a>
 						</li>
 						<li><a href="/my/settings">Settings</a></li>
 						<li>
