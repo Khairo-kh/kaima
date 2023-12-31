@@ -54,12 +54,26 @@ export const actions = {
 
 	updateListItem: async ({ request, locals }) => {
 		const formData = await request.formData();
-		console.log('formData', formData);
 		try {
 			await locals.pocketbase.collection('list_item').update(formData.get('id'), {
 				title: formData.get('title'),
 				description: formData.get('description'),
 				link: formData.get('link')
+			});
+		} catch (err) {
+			console.log('Error: ', err);
+			throw error(err.status, err.message);
+		}
+	},
+
+	createListItem: async ({ request, locals }) => {
+		const formData = await request.formData();
+		try {
+			await locals.pocketbase.collection('list_item').create({
+				title: formData.get('title'),
+				description: formData.get('description'),
+				link: formData.get('link'),
+				list: formData.get('listId')
 			});
 		} catch (err) {
 			console.log('Error: ', err);

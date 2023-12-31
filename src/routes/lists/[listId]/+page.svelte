@@ -1,7 +1,15 @@
 <script>
 	import ListItem from '$lib/components/ListItem.svelte';
+	import { Icon, Plus, Link } from 'svelte-hero-icons';
 	import { getImageURL } from '$lib/utils';
+	import ItemModal from '$lib/components/ItemModal.svelte';
 	export let data;
+	let showCreateModal = false;
+	let item = { description: '', title: '', link: '', listId: data.list.id };
+
+	function copyLink() {
+		navigator.clipboard.writeText(window.location.href);
+	}
 </script>
 
 <div class="flex flex-col w-full mt-4">
@@ -15,10 +23,26 @@
 			/>
 		</div>
 	</div>
-	<h1 class="text-4xl font-bold mt-8">
-		{data.list.name}
-	</h1>
-	<p class="text-2xl font-light mt-2">{data.list.description}</p>
+
+	<div class="flex justify-between items-start">
+		<div>
+			<h1 class="text-4xl font-bold mt-8">{data.list.name}</h1>
+			<p class="text-2xl font-light mt-2">{data.list.description}</p>
+		</div>
+		<div class="mt-9 mr-5">
+			<button
+				class="btn btn-primary"
+				on:click={() => {
+					showCreateModal = true;
+				}}
+			>
+				<Icon src={Plus} class="h-6 w-6" />
+			</button>
+			<button class="btn btn-secondary ml-2" on:click={copyLink}>
+				<Icon class="h-6 w-6" src={Link} />
+			</button>
+		</div>
+	</div>
 	<div class="divider mt-2 mb-2" />
 
 	<div>
@@ -26,4 +50,8 @@
 			<ListItem item={listItem} user={data.owner} />
 		{/each}
 	</div>
+
+	{#if showCreateModal}
+		<ItemModal form={item} on:close={() => (showCreateModal = false)} />
+	{/if}
 </div>
