@@ -30,14 +30,16 @@
 			<p class="text-2xl font-light mt-2">{data.list.description}</p>
 		</div>
 		<div class="mt-9 mr-5">
-			<button
-				class="btn btn-primary"
-				on:click={() => {
-					showCreateModal = true;
-				}}
-			>
-				<Icon src={Plus} class="h-6 w-6" />
-			</button>
+			{#if data?.user?.id}
+				<button
+					class="btn btn-primary"
+					on:click={() => {
+						showCreateModal = true;
+					}}
+				>
+					<Icon src={Plus} class="h-6 w-6" />
+				</button>
+			{/if}
 			<button class="btn btn-secondary ml-2" on:click={copyLink}>
 				<Icon class="h-6 w-6" src={Link} />
 			</button>
