@@ -1,27 +1,36 @@
-# create-svelte
+# Kaima
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This is a list sharing application built with SvelteKit for the frontend and Pocketbase for the backend. The application allows users to create and share lists with others. An example of a list could be "Top 10 places to visit in New York". Each list can have a title, description, and an image thumbnail. Each item in the list can have a title, description, and a link.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- User account and account management
+- Create lists with a title, description, and image thumbnail
+- Add items to lists with a title, description, and link
+- Share lists with others
+
+## Tech Stack
+
+- **Frontend:** SvelteKit
+- **Backend:** Pocketbase
+
+## Getting Started
+
+First, install the dependencies:
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run the application in development mode:
 
 ```bash
 npm run dev
+```
 
-# or start the server and open the app in a new browser tab
+You can also start the server and open the app in a new browser tab:
+
+```bash
 npm run dev -- --open
 ```
 
@@ -33,6 +42,6 @@ To create a production version of your app:
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## License
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This project is licensed under the terms of the MIT license.
